@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script to push the Motivational Quotes App to GitHub
-# Repository: https://github.com/krinavaghela/Mindset.git
+# Repository: https://github.com/krinavaghela/motivational-quotes.git
 
 echo "🚀 Pushing project to GitHub..."
 
@@ -14,10 +14,10 @@ fi
 # Check if remote already exists
 if git remote | grep -q "origin"; then
     echo "Remote 'origin' already exists. Updating..."
-    git remote set-url origin https://github.com/krinavaghela/Mindset.git
+    git remote set-url origin https://github.com/krinavaghela/motivational-quotes.git
 else
     echo "Adding remote repository..."
-    git remote add origin https://github.com/krinavaghela/Mindset.git
+    git remote add origin https://github.com/krinavaghela/motivational-quotes.git
 fi
 
 # Add all files
@@ -55,7 +55,7 @@ git push -u origin main
 if [ $? -eq 0 ]; then
     echo ""
     echo "✅ Successfully pushed to GitHub!"
-    echo "🌐 View your repository at: https://github.com/krinavaghela/Mindset"
+echo "🌐 View your repository at: https://github.com/krinavaghela/motivational-quotes"
 else
     echo ""
     echo "❌ Push failed. Common issues:"

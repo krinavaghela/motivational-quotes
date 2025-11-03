@@ -5,6 +5,8 @@ import AthleteDetail from '@/components/AthleteDetail';
 import Navbar from '@/components/Navbar';
 import { Box, CircularProgress, Typography } from '@mui/material';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 interface AthleteDetailData {
   slug: string;
   name: string;
@@ -39,7 +41,7 @@ export default function AthleteDetailPage() {
 
   const loadAthlete = async (athleteSlug: string) => {
     try {
-      const response = await fetch('/data/athletes.json');
+      const response = await fetch(`${basePath}/data/athletes.json`);
       const data = await response.json();
       const found = data.find((a: AthleteDetailData) => a.slug === athleteSlug);
       if (found) {
@@ -64,7 +66,7 @@ export default function AthleteDetailPage() {
   };
 
   const handleBack = () => {
-    router.push('/athletes');
+    router.push(`${basePath}/athletes`);
   };
 
   const handleFavorite = (athlete: AthleteDetailData) => {
@@ -77,11 +79,11 @@ export default function AthleteDetailPage() {
 
   const handleNavigate = (page: 'home' | 'favorites' | 'settings') => {
     if (page === 'home') {
-      router.push('/');
+      router.push(`${basePath}/`);
     } else if (page === 'favorites') {
-      router.push('/');
+      router.push(`${basePath}/`);
     } else if (page === 'settings') {
-      router.push('/');
+      router.push(`${basePath}/`);
     }
   };
 

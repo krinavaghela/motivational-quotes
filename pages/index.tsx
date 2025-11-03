@@ -24,6 +24,8 @@ import { categories } from '@/lib/categories';
 import { getFavorites } from '@/lib/utils';
 import { getStorageData } from '@/lib/storage';
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 type Screen = 'home' | 'category' | 'favorites' | 'settings';
 
 export default function Home() {
@@ -188,7 +190,7 @@ export default function Home() {
                 <Button
                   variant="outlined"
                   size="large"
-                  onClick={() => window.location.href = '/athletes'}
+                  onClick={() => window.location.href = `${basePath}/athletes`}
                   sx={{ borderRadius: 3, px: 4 }}
                 >
                   💪 Athletes & Mindset Stories →

@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export",
+    "build:gh": "GITHUB_PAGES=true GITHUB_PAGES_REPO=motivational-quotes next build",
+    "export:gh": "GITHUB_PAGES=true GITHUB_PAGES_REPO=motivational-quotes next export",
+    "deploy:gh": "npm run build:gh && npm run export:gh",
+    "publish:gh": "npm run deploy:gh && GITHUB_PAGES_REPO=motivational-quotes npx gh-pages -d out -b gh-pages"
   },
   "dependencies": {
     "react": "^18.3.1",

@@ -6,9 +6,11 @@ export interface CategoryQuote {
   author: string;
 }
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 export const fetchQuotesByCategory = async (category: string): Promise<Quote[]> => {
   try {
-    const response = await fetch('/data/quotesByCategory.json');
+    const response = await fetch(`${basePath}/data/quotesByCategory.json`);
     const data = await response.json();
     
     const categoryQuotes = data[category] || [];
