@@ -1,0 +1,315 @@
+{
+  "animals": [
+    {
+      "id": "animal-1",
+      "quote": "Until one has loved an animal, a part of one's soul remains unawakened.",
+      "author": "Anatole France"
+    },
+    {
+      "id": "animal-2",
+      "quote": "The greatness of a nation and its moral progress can be judged by the way its animals are treated.",
+      "author": "Mahatma Gandhi"
+    },
+    {
+      "id": "animal-3",
+      "quote": "Animals are such agreeable friends—they ask no questions; they pass no criticisms.",
+      "author": "George Eliot"
+    },
+    {
+      "id": "animal-4",
+      "quote": "The animal shall not be measured by man. In a world older and more complete than ours, they are more finished and complete, gifted with extensions of the senses we have lost or never attained.",
+      "author": "Henry Beston"
+    },
+    {
+      "id": "animal-5",
+      "quote": "We can judge the heart of a man by his treatment of animals.",
+      "author": "Immanuel Kant"
+    },
+    {
+      "id": "animal-6",
+      "quote": "Animals are reliable, many full of love, true in their affections, predictable in their actions, grateful and loyal. Difficult standards for people to live up to.",
+      "author": "Alfred A. Montapert"
+    }
+  ],
+  "philosophy": [
+    {
+      "id": "phil-1",
+      "quote": "The unexamined life is not worth living.",
+      "author": "Socrates"
+    },
+    {
+      "id": "phil-2",
+      "quote": "I think, therefore I am.",
+      "author": "René Descartes"
+    },
+    {
+      "id": "phil-3",
+      "quote": "Happiness is the highest good.",
+      "author": "Aristotle"
+    },
+    {
+      "id": "phil-4",
+      "quote": "The only thing I know is that I know nothing.",
+      "author": "Socrates"
+    },
+    {
+      "id": "phil-5",
+      "quote": "Man is condemned to be free; because once thrown into the world, he is responsible for everything he does.",
+      "author": "Jean-Paul Sartre"
+    },
+    {
+      "id": "phil-6",
+      "quote": "It is not what happens to you, but how you react to it that matters.",
+      "author": "Epictetus"
+    },
+    {
+      "id": "phil-7",
+      "quote": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+      "author": "Aristotle"
+    },
+    {
+      "id": "phil-8",
+      "quote": "The meaning of life is to give life meaning.",
+      "author": "Viktor Frankl"
+    }
+  ],
+  "psychology": [
+    {
+      "id": "psych-1",
+      "quote": "The curious paradox is that when I accept myself just as I am, then I can change.",
+      "author": "Carl Rogers"
+    },
+    {
+      "id": "psych-2",
+      "quote": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": "psych-3",
+      "quote": "Between stimulus and response there is a space. In that space is our power to choose our response.",
+      "author": "Viktor Frankl"
+    },
+    {
+      "id": "psych-4",
+      "quote": "People will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+      "author": "Maya Angelou"
+    },
+    {
+      "id": "psych-5",
+      "quote": "The greatest discovery of my generation is that a human being can alter his life by altering his attitudes.",
+      "author": "William James"
+    },
+    {
+      "id": "psych-6",
+      "quote": "In the middle of difficulty lies opportunity.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": "psych-7",
+      "quote": "The privilege of a lifetime is to become who you truly are.",
+      "author": "Carl Jung"
+    }
+  ],
+  "nature": [
+    {
+      "id": "nature-1",
+      "quote": "In every walk with nature one receives far more than he seeks.",
+      "author": "John Muir"
+    },
+    {
+      "id": "nature-2",
+      "quote": "The earth has music for those who listen.",
+      "author": "George Santayana"
+    },
+    {
+      "id": "nature-3",
+      "quote": "Adopt the pace of nature: her secret is patience.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": "nature-4",
+      "quote": "Look deep into nature, and then you will understand everything better.",
+      "author": "Albert Einstein"
+    },
+    {
+      "id": "nature-5",
+      "quote": "Nature always wears the colors of the spirit.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": "nature-6",
+      "quote": "The mountains are calling and I must go.",
+      "author": "John Muir"
+    },
+    {
+      "id": "nature-7",
+      "quote": "To sit in the shade on a fine day and look upon verdure is the most perfect refreshment.",
+      "author": "Jane Austen"
+    }
+  ],
+  "spirituality": [
+    {
+      "id": "spirit-1",
+      "quote": "The best way out is always through.",
+      "author": "Robert Frost"
+    },
+    {
+      "id": "spirit-2",
+      "quote": "Peace comes from within. Do not seek it without.",
+      "author": "Buddha"
+    },
+    {
+      "id": "spirit-3",
+      "quote": "The soul always knows what to do to heal itself. The challenge is to silence the mind.",
+      "author": "Caroline Myss"
+    },
+    {
+      "id": "spirit-4",
+      "quote": "You yourself, as much as anybody in the entire universe, deserve your love and affection.",
+      "author": "Buddha"
+    },
+    {
+      "id": "spirit-5",
+      "quote": "What you seek is seeking you.",
+      "author": "Rumi"
+    },
+    {
+      "id": "spirit-6",
+      "quote": "The wound is the place where the Light enters you.",
+      "author": "Rumi"
+    },
+    {
+      "id": "spirit-7",
+      "quote": "Be still and know that I am God.",
+      "author": "Psalm 46:10"
+    },
+    {
+      "id": "spirit-8",
+      "quote": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+      "author": "Rumi"
+    }
+  ],
+  "sports": [
+    {
+      "id": "sport-1",
+      "quote": "You miss 100% of the shots you don't take.",
+      "author": "Wayne Gretzky"
+    },
+    {
+      "id": "sport-2",
+      "quote": "The difference between the impossible and the possible lies in a person's determination.",
+      "author": "Tommy Lasorda"
+    },
+    {
+      "id": "sport-3",
+      "quote": "Champions aren't made in gyms. Champions are made from something they have deep inside them—a desire, a dream, a vision.",
+      "author": "Muhammad Ali"
+    },
+    {
+      "id": "sport-4",
+      "quote": "It's hard to beat a person who never gives up.",
+      "author": "Babe Ruth"
+    },
+    {
+      "id": "sport-5",
+      "quote": "The only way to prove you are a good sport is to lose.",
+      "author": "Ernie Banks"
+    },
+    {
+      "id": "sport-6",
+      "quote": "I've failed over and over and over again in my life and that is why I succeed.",
+      "author": "Michael Jordan"
+    },
+    {
+      "id": "sport-7",
+      "quote": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing.",
+      "author": "Pelé"
+    }
+  ],
+  "art": [
+    {
+      "id": "art-1",
+      "quote": "Every child is an artist. The problem is how to remain an artist once we grow up.",
+      "author": "Pablo Picasso"
+    },
+    {
+      "id": "art-2",
+      "quote": "Creativity takes courage.",
+      "author": "Henri Matisse"
+    },
+    {
+      "id": "art-3",
+      "quote": "Art washes away from the soul the dust of everyday life.",
+      "author": "Pablo Picasso"
+    },
+    {
+      "id": "art-4",
+      "quote": "The purpose of art is washing the dust of daily life off our souls.",
+      "author": "Pablo Picasso"
+    },
+    {
+      "id": "art-5",
+      "quote": "I dream my painting and I paint my dream.",
+      "author": "Vincent van Gogh"
+    },
+    {
+      "id": "art-6",
+      "quote": "Every artist was first an amateur.",
+      "author": "Ralph Waldo Emerson"
+    },
+    {
+      "id": "art-7",
+      "quote": "Art is not what you see, but what you make others see.",
+      "author": "Edgar Degas"
+    },
+    {
+      "id": "art-8",
+      "quote": "The job of the artist is always to deepen the mystery.",
+      "author": "Francis Bacon"
+    }
+  ],
+  "technology": [
+    {
+      "id": "tech-1",
+      "quote": "The best way to predict the future is to invent it.",
+      "author": "Alan Kay"
+    },
+    {
+      "id": "tech-2",
+      "quote": "Innovation distinguishes between a leader and a follower.",
+      "author": "Steve Jobs"
+    },
+    {
+      "id": "tech-3",
+      "quote": "The only way to do great work is to love what you do.",
+      "author": "Steve Jobs"
+    },
+    {
+      "id": "tech-4",
+      "quote": "Stay hungry. Stay foolish.",
+      "author": "Steve Jobs"
+    },
+    {
+      "id": "tech-5",
+      "quote": "The computer was born to solve problems that did not exist before.",
+      "author": "Bill Gates"
+    },
+    {
+      "id": "tech-6",
+      "quote": "Technology is best when it brings people together.",
+      "author": "Matt Mullenweg"
+    },
+    {
+      "id": "tech-7",
+      "quote": "Any sufficiently advanced technology is indistinguishable from magic.",
+      "author": "Arthur C. Clarke"
+    },
+    {
+      "id": "tech-8",
+      "quote": "The science of today is the technology of tomorrow.",
+      "author": "Edward Teller"
+    }
+  ]
+}
+
+
