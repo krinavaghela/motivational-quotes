@@ -82,6 +82,9 @@ const persistFavorites = (map: FavoriteMap) => {
 
 const themeLabel = (themeKey: string) => themeKey.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 
+const FALLBACK_AVATAR =
+  'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><rect width="120" height="120" rx="60" fill="%23212436"/><path d="M60 61c12.5 0 22.5-10.1 22.5-22.5S72.5 16 60 16 37.5 26.1 37.5 38.5 47.5 61 60 61Zm0 11c-15 0-45 7.6-45 22.5V105c0 2.8 2.2 5 5 5h80c2.8 0 5-2.2 5-5v-10.5C105 79.6 75 72 60 72Z" fill="%23a0b4ff"/></svg>';
+
 const AthleteCard = ({
   athlete,
   onSelect,
@@ -94,6 +97,12 @@ const AthleteCard = ({
   onFavoriteToggle: (athlete: AthleteMindset) => void;
 }) => {
   const theme = useTheme();
+  const [imageSrc, setImageSrc] = useState(athlete.image || FALLBACK_AVATAR);
+
+  const handleImageError = () => {
+    setImageSrc(FALLBACK_AVATAR);
+  };
+
   return (
     <motion.div
       layout
@@ -110,40 +119,44 @@ const AthleteCard = ({
           position: 'relative',
           overflow: 'hidden',
           backdropFilter: 'blur(18px)',
-          background: 'linear-gradient(145deg, #ffffff 0%, #eef1ff 100%)',
-          border: '1px solid rgba(200, 208, 245, 0.65)',
-          boxShadow: '0 24px 48px rgba(120, 135, 200, 0.25)',
+          background: 'linear-gradient(160deg, #1f1b3a 0%, #261f4f 45%, #0d1329 100%)',
+          border: '1px solid rgba(120, 126, 199, 0.35)',
+          boxShadow: '0 28px 60px rgba(6, 10, 28, 0.45)',
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-          color: theme.palette.text.primary,
+          color: '#f3f4ff',
           '&:hover': {
             transform: 'translateY(-10px)',
-            boxShadow: '0 34px 70px rgba(90, 110, 200, 0.35)',
+            boxShadow: '0 36px 78px rgba(6, 10, 28, 0.55)',
           },
         }}
       >
-        <CardActionArea sx={{ height: '100%', alignItems: 'stretch', display: 'flex', flexDirection: 'column' }} onClick={() => onSelect(athlete)}>
+        <CardActionArea
+          sx={{ height: '100%', alignItems: 'stretch', display: 'flex', flexDirection: 'column' }}
+          onClick={() => onSelect(athlete)}
+        >
           <Box
             component="div"
             sx={{
               position: 'relative',
               width: '100%',
               pt: '56%',
-              borderBottom: '1px solid rgba(255,255,255,0.4)',
+              borderBottom: '1px solid rgba(255,255,255,0.25)',
               overflow: 'hidden',
             }}
           >
             <Box
               component="img"
               alt={athlete.name}
-              src={athlete.image}
+              src={imageSrc}
               sx={{
                 position: 'absolute',
                 inset: 0,
                 width: '100%',
                 height: '100%',
                 objectFit: 'cover',
-                filter: 'saturate(1.05)',
+                filter: 'saturate(1.08)',
               }}
+              onError={handleImageError}
             />
             <Box
               sx={{
@@ -157,23 +170,32 @@ const AthleteCard = ({
               spacing={1}
               sx={{ position: 'absolute', bottom: 16, left: 16, right: 16, alignItems: 'center' }}
             >
-              <Avatar src={athlete.image} alt={athlete.name} sx={{ border: '2px solid rgba(255,255,255,0.7)' }} />
+              <Avatar
+                src={imageSrc}
+                alt={athlete.name}
+                sx={{
+                  border: '2px solid rgba(255,255,255,0.85)',
+                  backgroundColor: 'rgba(15,22,48,0.85)',
+                  width: 48,
+                  height: 48,
+                }}
+              />
               <Box>
-                <Typography variant="subtitle1" sx={{ color: '#fff', fontWeight: 700 }}>
+                <Typography variant="subtitle1" sx={{ color: '#fefbff', fontWeight: 700 }}>
                   {athlete.name}
                 </Typography>
-                <Typography variant="caption" sx={{ color: alpha('#fff', 0.8) }}>
+                <Typography variant="caption" sx={{ color: 'rgba(244, 246, 255, 0.78)' }}>
                   {athlete.sport} · {athlete.country}
                 </Typography>
               </Box>
             </Stack>
           </Box>
-          <CardContent sx={{ flexGrow: 1, width: '100%', p: 3, color: theme.palette.text.primary }}>
+          <CardContent sx={{ flexGrow: 1, width: '100%', p: 3, color: '#e8e9ff' }}>
             <Stack spacing={2}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#291b52' }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#f9f9ff' }}>
                 {athlete.headline}
               </Typography>
-              <Typography variant="body2" sx={{ lineHeight: 1.6, color: '#43376b' }}>
+              <Typography variant="body2" sx={{ lineHeight: 1.6, color: 'rgba(231,233,255,0.82)' }}>
                 {athlete.summary}
               </Typography>
               <Stack direction="row" spacing={1} flexWrap="wrap">
@@ -184,8 +206,8 @@ const AthleteCard = ({
                     label={themeLabel(themeKey)}
                     sx={{
                       borderRadius: 999,
-                      backgroundColor: alpha('#4c51bf', 0.14),
-                      color: '#3a2b7a',
+                      backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                      color: '#cdd4ff',
                       fontWeight: 600,
                     }}
                   />
@@ -205,11 +227,11 @@ const AthleteCard = ({
                     px: 2.5,
                     textTransform: 'none',
                     fontWeight: 600,
-                    borderColor: alpha('#4c51bf', 0.3),
-                    color: isFavorite ? '#d53f8c' : '#4c51bf',
+                    borderColor: 'rgba(209, 213, 255, 0.4)',
+                    color: isFavorite ? '#fbb6ce' : '#dbe4ff',
                     '&:hover': {
-                      borderColor: '#4c51bf',
-                      backgroundColor: alpha('#4c51bf', 0.08),
+                      borderColor: 'rgba(209, 213, 255, 0.7)',
+                      backgroundColor: 'rgba(209, 213, 255, 0.12)',
                     },
                   }}
                 >
@@ -220,7 +242,7 @@ const AthleteCard = ({
                   size="small"
                   endIcon={<ArrowOutward fontSize="small" />}
                   onClick={() => onSelect(athlete)}
-                  sx={{ textTransform: 'none', fontWeight: 600 }}
+                  sx={{ textTransform: 'none', fontWeight: 600, color: '#d1d9ff' }}
                 >
                   Learn mindset
                 </Button>
@@ -310,7 +332,7 @@ export default function AthleteMindsetGallery() {
       navigator
         .share({ title: athlete.name, text, url })
         .catch(() => setToast({ open: true, message: 'Share cancelled', severity: 'info' }));
-      return;
+        return;
     }
 
     if (platform === 'copy') {
@@ -464,15 +486,15 @@ export default function AthleteMindsetGallery() {
                     >
                       <Typography variant="caption" sx={{ color: 'rgba(240,238,255,0.78)', letterSpacing: 1 }}>
                         {stat.label}
-                      </Typography>
+            </Typography>
                       <Typography variant="h5" sx={{ fontWeight: 700, color: '#faf6ff' }}>
                         {stat.value.toLocaleString()}
-                      </Typography>
+            </Typography>
                     </Box>
                   ))}
                 </Stack>
               </Stack>
-            </Box>
+          </Box>
 
             <Stack spacing={2.5} sx={{ mb: 4 }}>
               <Box
@@ -488,25 +510,25 @@ export default function AthleteMindsetGallery() {
                   boxShadow: '0 24px 48px rgba(170, 180, 225, 0.28)',
                 }}
               >
-                <TextField
-                  fullWidth
-                  variant="outlined"
+            <TextField
+              fullWidth
+              variant="outlined"
                   placeholder="Search by athlete, sport, or mindset keyword..."
-                  value={searchQuery}
+              value={searchQuery}
                   onChange={(event) => {
                     setSearchQuery(event.target.value);
                     setVisibleCount(INITIAL_VISIBLE);
                   }}
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <Search />
-                      </InputAdornment>
-                    ),
-                  }}
-                  sx={{
-                    flex: 1,
-                    '& .MuiOutlinedInput-root': {
+              InputProps={{
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search />
+                  </InputAdornment>
+                ),
+              }}
+              sx={{
+                flex: 1,
+                '& .MuiOutlinedInput-root': {
                       borderRadius: 999,
                       backgroundColor: alpha('#ffffff', 0.75),
                       '& fieldset': {
@@ -518,11 +540,11 @@ export default function AthleteMindsetGallery() {
                       '&.Mui-focused fieldset': {
                         borderColor: theme.palette.primary.main,
                       },
-                    },
-                  }}
-                  aria-label="Search athletes"
-                />
-
+                },
+              }}
+              aria-label="Search athletes"
+            />
+            
                 <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} alignItems={{ xs: 'stretch', sm: 'center' }} justifyContent="flex-end">
                   <ToggleButtonGroup
                     value={sortOption}
@@ -565,11 +587,11 @@ export default function AthleteMindsetGallery() {
                     startIcon={<RestartAlt />}
                     onClick={resetFilters}
                     disabled={themeFilter === 'all' && sortOption === 'az' && !searchQuery}
-                    sx={{
+                sx={{
                       borderRadius: 999,
                       px: 3,
-                      textTransform: 'none',
-                      fontWeight: 600,
+                    textTransform: 'none',
+                    fontWeight: 600,
                       background: 'linear-gradient(135deg, rgba(255,255,255,0.85), rgba(229,233,255,0.95))',
                       color: theme.palette.text.primary,
                       boxShadow: '0 18px 32px rgba(160, 170, 215, 0.35)',
@@ -578,13 +600,13 @@ export default function AthleteMindsetGallery() {
                       },
                       '&.Mui-disabled': {
                         opacity: 0.45,
-                      },
-                    }}
-                  >
+                  },
+                }}
+              >
                     Reset
                   </Button>
                 </Stack>
-              </Box>
+          </Box>
 
               <Box
                 sx={{
@@ -646,7 +668,7 @@ export default function AthleteMindsetGallery() {
             </Typography>
 
             <Grid container spacing={3}>
-              <AnimatePresence>
+                <AnimatePresence>
                 {displayedAthletes.map((athlete) => (
                   <Grid item xs={12} sm={6} md={4} key={athlete.slug} sx={{ display: 'flex' }}>
                     <AthleteCard
@@ -659,16 +681,16 @@ export default function AthleteMindsetGallery() {
                       onFavoriteToggle={handleFavoriteToggle}
                     />
                   </Grid>
-                ))}
-              </AnimatePresence>
+                  ))}
+                </AnimatePresence>
             </Grid>
 
-            {hasMore && (
+              {hasMore && (
               <Box ref={loadMoreRef} sx={{ textAlign: 'center', mt: 6 }}>
-                <Button
-                  variant="outlined"
+                  <Button
+                    variant="outlined"
                   startIcon={<ShareIcon sx={{ transform: 'rotate(90deg)' }} />}
-                  onClick={handleLoadMore}
+                    onClick={handleLoadMore}
                   sx={{
                     borderRadius: 999,
                     px: 4,
@@ -677,9 +699,9 @@ export default function AthleteMindsetGallery() {
                   }}
                 >
                   Load more mindsets
-                </Button>
-              </Box>
-            )}
+                  </Button>
+                </Box>
+              )}
 
             {!hasMore && filteredAthletes.length > 0 && (
               <Typography variant="body2" color="text.secondary" sx={{ mt: 4, textAlign: 'center' }}>
@@ -698,14 +720,14 @@ export default function AthleteMindsetGallery() {
               >
                 <Typography variant="h6" sx={{ mb: 1 }}>
                   No playbooks match that filter yet.
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
                   Reset your filters or try searching by a different quality—resilience, leadership, calm.
-                </Typography>
-              </Box>
-            )}
-          </motion.div>
-        </Container>
+              </Typography>
+            </Box>
+          )}
+        </motion.div>
+      </Container>
         <Tooltip title="Surprise me with a mindset" placement="left">
           <Fab
             color="primary"
