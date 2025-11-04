@@ -114,6 +114,7 @@ const AthleteCard = ({
           border: '1px solid rgba(200, 208, 245, 0.65)',
           boxShadow: '0 24px 48px rgba(120, 135, 200, 0.25)',
           transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+          color: theme.palette.text.primary,
           '&:hover': {
             transform: 'translateY(-10px)',
             boxShadow: '0 34px 70px rgba(90, 110, 200, 0.35)',
@@ -167,12 +168,12 @@ const AthleteCard = ({
               </Box>
             </Stack>
           </Box>
-          <CardContent sx={{ flexGrow: 1, width: '100%', p: 3 }}>
+          <CardContent sx={{ flexGrow: 1, width: '100%', p: 3, color: theme.palette.text.primary }}>
             <Stack spacing={2}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 700 }}>
+              <Typography variant="subtitle1" sx={{ fontWeight: 700, color: '#291b52' }}>
                 {athlete.headline}
               </Typography>
-              <Typography variant="body2" color="text.secondary" sx={{ lineHeight: 1.6, color: alpha(theme.palette.text.primary, 0.78) }}>
+              <Typography variant="body2" sx={{ lineHeight: 1.6, color: '#43376b' }}>
                 {athlete.summary}
               </Typography>
               <Stack direction="row" spacing={1} flexWrap="wrap">
@@ -183,8 +184,8 @@ const AthleteCard = ({
                     label={themeLabel(themeKey)}
                     sx={{
                       borderRadius: 999,
-                      backgroundColor: alpha('#4c51bf', 0.12),
-                      color: '#4c51bf',
+                      backgroundColor: alpha('#4c51bf', 0.14),
+                      color: '#3a2b7a',
                       fontWeight: 600,
                     }}
                   />

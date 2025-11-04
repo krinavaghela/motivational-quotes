@@ -107,28 +107,28 @@ export default function AthleteDetailPage() {
 
         <Stack spacing={3}>
           <Box>
-            <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+            <Typography variant="overline" sx={{ letterSpacing: 1.2, color: '#5a4aa5' }}>
               Headline
             </Typography>
-            <Typography variant="h5" sx={{ fontWeight: 700, mt: 1 }}>
+            <Typography variant="h5" sx={{ fontWeight: 700, mt: 1, color: '#22164d' }}>
               {athlete.headline}
             </Typography>
-            <Typography variant="body1" color="text.secondary" sx={{ mt: 1.5, lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ mt: 1.5, lineHeight: 1.7, color: '#3c2f6f' }}>
               {athlete.summary}
             </Typography>
           </Box>
 
           <Stack direction="row" spacing={1} flexWrap="wrap">
             {athlete.themes.map((theme) => (
-              <Chip key={theme} label={theme.replace(/-/g, ' ')} sx={{ borderRadius: 999 }} />
+              <Chip key={theme} label={theme.replace(/-/g, ' ')} sx={{ borderRadius: 999, backgroundColor: alpha('#4c51bf', 0.14), color: '#3a2b7a', fontWeight: 600 }} />
             ))}
           </Stack>
 
           <Box>
-            <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+            <Typography variant="overline" sx={{ letterSpacing: 1.2, color: '#5a4aa5' }}>
               Defining moment
             </Typography>
-            <Typography variant="body1" sx={{ mt: 1.2, lineHeight: 1.7 }}>
+            <Typography variant="body1" sx={{ mt: 1.2, lineHeight: 1.7, color: '#3c2f6f' }}>
               {athlete.signatureMoment}
             </Typography>
           </Box>
@@ -136,10 +136,10 @@ export default function AthleteDetailPage() {
           <Divider />
 
           <Box>
-            <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+            <Typography variant="overline" sx={{ letterSpacing: 1.2, color: '#5a4aa5' }}>
               Mindset codes
             </Typography>
-            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2 }}>
+            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, color: '#33255f' }}>
               {athlete.mindsets.map((item) => (
                 <Typography component="li" variant="body2" key={item}>
                   {item}
@@ -149,10 +149,10 @@ export default function AthleteDetailPage() {
           </Box>
 
           <Box>
-            <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+            <Typography variant="overline" sx={{ letterSpacing: 1.2, color: '#5a4aa5' }}>
               Daily habits to copy
             </Typography>
-            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2 }}>
+            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, color: '#33255f' }}>
               {athlete.dailyHabits.map((item) => (
                 <Typography component="li" variant="body2" key={item}>
                   {item}
@@ -162,10 +162,10 @@ export default function AthleteDetailPage() {
           </Box>
 
           <Box>
-            <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+            <Typography variant="overline" sx={{ letterSpacing: 1.2, color: '#5a4aa5' }}>
               Apply it in your life
             </Typography>
-            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2 }}>
+            <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, color: '#33255f' }}>
               {athlete.transferToLife.map((item) => (
                 <Typography component="li" variant="body2" key={item}>
                   {item}
