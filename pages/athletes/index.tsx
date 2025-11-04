@@ -755,9 +755,10 @@ export default function AthleteMindsetGallery() {
             borderRadius: 5,
             overflow: 'hidden',
             backdropFilter: 'blur(24px)',
-            background: 'linear-gradient(135deg, rgba(255,255,255,0.92), rgba(236,240,255,0.95))',
-            border: '1px solid rgba(205, 212, 248, 0.6)',
-            boxShadow: '0 40px 88px rgba(100,110,190,0.28)',
+            background: 'linear-gradient(160deg, #11152d 0%, #1d2141 45%, #090b1c 100%)',
+            border: '1px solid rgba(137, 150, 255, 0.35)',
+            boxShadow: '0 40px 90px rgba(3, 4, 15, 0.65)',
+            color: '#f4f5ff',
           },
         }}
       >
@@ -778,7 +779,11 @@ export default function AthleteMindsetGallery() {
                 <Close />
               </IconButton>
               <Stack direction="row" spacing={2} sx={{ position: 'absolute', bottom: 24, left: 24, alignItems: 'center' }}>
-                <Avatar src={selectedAthlete.image} alt={selectedAthlete.name} sx={{ border: '2px solid rgba(255,255,255,0.7)' }} />
+                <Avatar
+                  src={selectedAthlete.image || FALLBACK_AVATAR}
+                  alt={selectedAthlete.name}
+                  sx={{ border: '2px solid rgba(255,255,255,0.85)', width: 56, height: 56, backgroundColor: 'rgba(15,22,48,0.85)' }}
+                />
                 <Box>
                   <Typography variant="h5" sx={{ fontWeight: 700, color: '#fff' }}>
                     {selectedAthlete.name}
@@ -790,29 +795,36 @@ export default function AthleteMindsetGallery() {
               </Stack>
             </Box>
 
-            <DialogContent sx={{ pt: 4, pb: 1 }}>
-              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1 }}>
+            <DialogContent
+              sx={{
+                pt: 4,
+                pb: 1,
+                color: '#f1f2ff',
+                '& h6, & h5, & h4': { color: '#f9f9ff' },
+              }}
+            >
+              <Typography variant="subtitle1" sx={{ fontWeight: 700, mb: 1, fontSize: '1.35rem' }}>
                 {selectedAthlete.headline}
               </Typography>
-              <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
+              <Typography variant="body1" sx={{ mb: 3, color: 'rgba(226,228,255,0.82)' }}>
                 {selectedAthlete.summary}
               </Typography>
 
               <Stack spacing={3}>
                 <Box>
-                  <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+                  <Typography variant="overline" sx={{ letterSpacing: 1.4, color: 'rgba(189, 196, 255, 0.8)' }}>
                     Defining moment
                   </Typography>
-                  <Typography variant="body1" sx={{ mt: 1.2, lineHeight: 1.7 }}>
+                  <Typography variant="body1" sx={{ mt: 1.2, lineHeight: 1.7, color: '#e4e6ff' }}>
                     {selectedAthlete.signatureMoment}
                   </Typography>
                 </Box>
 
                 <Box>
-                  <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+                  <Typography variant="overline" sx={{ letterSpacing: 1.4, color: 'rgba(189, 196, 255, 0.8)' }}>
                     Mindset codes
                   </Typography>
-                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, '& li': { lineHeight: 1.6 } }}>
+                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, '& li': { lineHeight: 1.6, color: 'rgba(231,233,255,0.85)' } }}>
                     {selectedAthlete.mindsets.map((item) => (
                       <Typography component="li" variant="body2" key={item}>
                           {item}
@@ -822,10 +834,10 @@ export default function AthleteMindsetGallery() {
                 </Box>
 
                 <Box>
-                  <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+                  <Typography variant="overline" sx={{ letterSpacing: 1.4, color: 'rgba(189, 196, 255, 0.8)' }}>
                     Daily habits to steal
                   </Typography>
-                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2 }}>
+                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, '& li': { color: 'rgba(231,233,255,0.85)' } }}>
                     {selectedAthlete.dailyHabits.map((item) => (
                       <Typography component="li" variant="body2" key={item}>
                         {item}
@@ -835,10 +847,10 @@ export default function AthleteMindsetGallery() {
                 </Box>
 
                 <Box>
-                  <Typography variant="overline" sx={{ letterSpacing: 1.2 }}>
+                  <Typography variant="overline" sx={{ letterSpacing: 1.4, color: 'rgba(189, 196, 255, 0.8)' }}>
                     Bring it into your life
                   </Typography>
-                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2 }}>
+                  <Stack component="ul" spacing={1.2} sx={{ mt: 1.2, pl: 2, '& li': { color: 'rgba(231,233,255,0.85)' } }}>
                     {selectedAthlete.transferToLife.map((item) => (
                       <Typography component="li" variant="body2" key={item}>
                         {item}
@@ -855,7 +867,16 @@ export default function AthleteMindsetGallery() {
                   variant="contained"
                   startIcon={favorites[selectedAthlete.slug] ? <FavoriteIcon /> : <FavoriteBorder />}
                   onClick={() => handleFavoriteToggle(selectedAthlete)}
-                  sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 600 }}
+                  sx={{
+                    borderRadius: 999,
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    background: 'linear-gradient(135deg, #4750ff, #8a7bff)',
+                    boxShadow: '0 18px 32px rgba(118, 126, 255, 0.35)',
+                    '&:hover': {
+                      background: 'linear-gradient(135deg, #5560ff, #9b8cff)',
+                    },
+                  }}
                 >
                   {favorites[selectedAthlete.slug] ? 'Saved' : 'Save playbook'}
                 </Button>
@@ -870,12 +891,31 @@ export default function AthleteMindsetGallery() {
                         : 'twitter'
                     )
                   }
-                  sx={{ borderRadius: 999, textTransform: 'none', fontWeight: 600 }}
+                  sx={{
+                    borderRadius: 999,
+                    textTransform: 'none',
+                    fontWeight: 600,
+                    borderColor: 'rgba(189, 196, 255, 0.5)',
+                    color: '#d9dcff',
+                    '&:hover': {
+                      borderColor: 'rgba(189, 196, 255, 0.8)',
+                      backgroundColor: 'rgba(189, 196, 255, 0.12)',
+                    },
+                  }}
                 >
                   Share insight
                 </Button>
               </Stack>
-              <Button onClick={() => setSelectedAthlete(null)} startIcon={<ArrowOutward />} sx={{ textTransform: 'none', fontWeight: 600 }}>
+              <Button
+                onClick={() => setSelectedAthlete(null)}
+                startIcon={<ArrowOutward />}
+                sx={{
+                  textTransform: 'none',
+                  fontWeight: 600,
+                  color: '#d1d5ff',
+                  '&:hover': { color: '#fff' },
+                }}
+              >
                 Close
               </Button>
             </DialogActions>
